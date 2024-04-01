@@ -6,3 +6,9 @@ dev:
     command: bash
     sync: 
       - .:/app
+    forward:
+      - 2345:2345
+    securityContext:
+      capabilities:
+        add:
+          - SYS_PTRACE
