@@ -16,16 +16,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
-      - name: Build and push dev image
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: okteto/cplusplus-getting-started:dev
-          target: dev
-          context: ./hello-world
-      - name: Build and push prod image
+      - name: Build and push image
         uses: docker/build-push-action@v5
         with:
           push: true
           tags: okteto/cplusplus-getting-started:hello-world
-          context: ./hello-world
